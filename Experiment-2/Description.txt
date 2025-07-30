@@ -1,0 +1,11 @@
+In this experiment we have make a banking  interface in which we use index.html and style.css 
+file and also style the interface by adding different constraints, and also made the <div> tag
+in which making classes ("outer-container" , "inner-container" and "balance-section h2")  and
+button element ( repersent a button labelled by its content). In which made two options
+"depoist" and "withdraw".There we have add different constraints in the outer-container and
+inner-container like height ,width ,background colour ,justify-content(to justify the position
+of the box or teh output) , padding and marginal also used for outer-container  and then add 
+the description for the style of button (about its shape ) , then add the background colour
+for the button that has been named as deposit and withdraw and also add the  font size used
+in the banking interface that we have made.
+
