@@ -1,0 +1,99 @@
+STUDENT REGISTRATION FORM TEST CASES & VALIDATIONS
+1. Field: Name
+Requirement:
+This field is required (cannot be left empty).
+Must contain only uppercase/lowercase alphabets and spaces.
+Pattern used: [A-Za-z\s]+
+
+Valid Inputs :
+"Deepjoy Paul"
+"Silvester Stallone"
+
+Invalid Inputs :
+"deepjoy123" → Contains numbers (violates pattern)
+"deepjoy_paul" → Contains an underscore (not allowed)
+"DEEPJOY@paul" → Contains a special character
+
+2. Field: Email Requirement:
+This field is required.
+Must follow standard email format like example@domain.com or example@domain.co.in
+
+Valid Inputs:
+"deepjoypaul442@gmail.com"
+"deepjoy442@gmail.co.in"
+
+Invalid Inputs:
+"deepjoy.paul" → Missing @ and domain
+"deepjoy@.com" → Domain name is missing
+"deepjoy@com" → Missing . in domain
+"deepjoy@domain,com" → Comma instead of dot
+
+3. Field: Age
+Requirement:
+This field is required
+Must be numeric
+Must be between 5 and 130
+
+Valid Inputs:
+5 → Minimum valid
+18, 65 → Typical valid ages
+130 → Maximum valid
+
+Invalid Inputs:
+"" (empty) → Triggers "required" validation
+4 → Below minimum range
+131 → Above maximum range
+"abc" → Non-numeric input
+
+4. Form Submission
+If all fields are valid:
+The form will submit successfully.
+If any field is invalid:
+The form will not submit, and the browser displays HTML5 validation messages for correction.
+
+CSS STYLING BREAKDOWN
+1. Element: body (Page Background)
+background-color#65cbea5b;
+→ Sets a calm, semi-transparent blue-green background
+margin-top: 30vh;
+→ Pushes form down by 30% of the screen height for balanced layout
+
+2. Element: .form-container (Main Form Wrapper)
+Property	Effect
+background-color: white	Clean, distraction-free background
+margin: 40px auto	Centered on page with vertical spacing
+padding: 20px 30px	Spacious layout inside the form
+border-radius: 8px	Smooth rounded corners
+box-shadow	Slight elevation effect (professional card look)
+max-width: 480px	Restrains width for better readability on larger screens
+
+3. Element: .form-header
+text-align: center;
+→ Ensures the form title and intro text are visually centered
+
+4. Element: .form-group
+margin-bottom: 20px;
+→ Adds space between fields to prevent visual clutter
+
+5. Element: .form-group input
+Property	Effect
+width: 100%	Fields take full available width
+padding: 10px 0px	Vertical comfort in typing
+border: 1px solid #ddd	Light, non-intrusive borders
+border-radius: 5px	Modern rounded corners
+font-size: 17px	Clear, legible input font
+
+6. Element: .btn-submit (Submit Button)
+Property	Effect
+width: 100%	Full-width button
+padding: 12px	Ample space for easy clickability
+background-color#4a90e2	Bright blue for visibility
+color: white	Strong text contrast
+font-size: 20px	Large, bold call-to-action text
+border: none	Removes default styling
+margin-top: 10px	Adds space above the button
+
+LEARNING OUTCOMES
+1.How to create a student registration form
+2.Learnt how to use html 5 validations.
+3.How to run test cases for the student registration form.
