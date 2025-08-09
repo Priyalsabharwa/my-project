@@ -6,13 +6,14 @@
   
   body {
     font-family: Arial, sans-serif;
+
   }
   
   .dashboard-container {
     position: relative;
   }
   
-  /* Dark Mode Toggle Label */
+
   .toggle {
     position: absolute;
     top: 10px;
@@ -38,7 +39,7 @@
     border: 1px solid #333;
   }
   
-  /* Header */
+
   header {
     grid-area: header;
     background-color: #4caf50;
@@ -46,7 +47,7 @@
     padding: 10px 20px;
   }
   
-  /* Sidebar */
+  
   aside {
     grid-area: sidebar;
     background-color: #f4f4f4;
@@ -66,7 +67,7 @@
     color: purple;
   }
   
-  /* Main */
+
   main {
     grid-area: main;
     padding: 20px;
@@ -82,7 +83,7 @@
     padding: 10px;
   }
   
-  /* Dark Mode CSS when checkbox is checked */
+  
   #theme-toggle:checked ~ .dashboard-container .dashboard {
     background-color: #121212;
     color: white;

@@ -5,13 +5,13 @@ The value should be numeric and displayed in currency format (e.g., $1000). The 
 
 VALID OUTPUTS:
 
-$1000 – Default visible value in correct format
+$1000000000 – Default visible value in correct format
 
 $250, $9000.50 – Other valid currency formats
 
 INVALID OUTPUTS:
 
-abc, 1000$, or empty – Incorrect formatting or missing symbol
+abc, 100000000$, or empty – Incorrect formatting or missing symbol
 
 Negative values (if not allowed in logic)
 
