@@ -1,11 +1,126 @@
-In this experiment we have make a banking  interface in which we use index.html and style.css 
-file and also style the interface by adding different constraints, and also made the <div> tag
-in which making classes ("outer-container" , "inner-container" and "balance-section h2")  and
-button element ( repersent a button labelled by its content). In which made two options
-"depoist" and "withdraw".There we have add different constraints in the outer-container and
-inner-container like height ,width ,background colour ,justify-content(to justify the position
-of the box or teh output) , padding and marginal also used for outer-container  and then add 
-the description for the style of button (about its shape ) , then add the background colour
-for the button that has been named as deposit and withdraw and also add the  font size used
-in the banking interface that we have made.
+BANKING UI- test cases and validations
+
+1. FIELD: Balance display
+   Requirement: Firstly display the current balance.
+               Initially set it as $0.
+               should update dynamically (withdraw and deposits).
+VALID INPUTS:
+   $0.$500or $100 - or any other numeric input(positive or zero)
+ 
+INVALID INPUTS:
+ Negative amounts, non-numeric value , incorrect format like ABC, 1000 USD.
+
+2.FIELD: Deposit Button
+  Requirements: Must be clickable and responsive, adds amount to balance.
+VALID INPUTS:
+Clicking increases balance.
+
+INVALID INPUTS:
+Button disabled or not clickable.
+Depositing negative amounts.
+
+3.FIELD:  Withdraw Button
+ Requirements: withdraw action(deducts amount from balance)
+.Must prevent withdrawing more than available balace.
+
+VALID INPUTS:
+Withdraw within the available balance.
+
+INVALID INPUTS:
+Withdraw greater than current balance.
+Withdraw with zero balance.
+
+
+4. Responsive Design
+  Requirements:Buttons and text resize for better mobile usability.
+
+CSS Styling Breakdown: A Structured Overview
+
+1. Element: * (Universal selector)
+Purpose: Applies base styles to all elements. 
+Properties and effects:
+ box-sizing: border-box; ensures padding and border included in size.
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; for clean and modern text.
+
+2.ELEMENT: body
+Purpose: Centre the entire UI on screen.
+Properties and effects:
+ background-color: #f0f0f0b5;light-semi-transparent gray
+    height: 100vh;
+    display: flex; perfectly centers content
+    justify-content: center;
+    align-items: center;
+
+
+3.ELEMENT:.outer-container
+Purpose: Holds the UI in colored frame.
+Properties and effects:
+display: flex;
+    background-color: rgb(33, 37, 138);
+    justify-content: center;
+    align-items: center;
+    width: 350px; 
+    padding: 20px;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+
+4.ELEMENT:.inner-container
+Purpose: White card holding balance and buttons.
+Properties and effects:
+   background-color: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 320px;
+    width: 100%;
+    text-align: center;
+
+5.ELEMENT:.balance-section h2
+Purpose: Displays the account balance.
+Properties and effects:
+ color: green;
+    font-size: 28px;
+    margin-bottom: 20px;
+
+6.ELEMENT:,=.button-section
+Purpose: Holds deposits & withdraw buttons vertically.
+Properties and effects:
+   display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+7.ELEMENT:.btn
+Purpose:  Base styling for both buttons
+Properties and effects:
+  width: 100%; full width.
+    padding: 12px;
+    font-size: 20px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+
+8.ELEMENT:.deposit
+Purpose: Styles deposit button
+Properties and efforts:
+ background-color: #a7a728;
+
+9.ELEMENT: .withdraw
+Purpose: styles withdraw button.
+Properties and effects:
+background-color: #dc3545;
+
+10.MEDIA QUERY: 
+Purpose: adjusts the layout for small screens.
+Properties and effects:
+ .inner-container 
+        padding: 20px 15px;
+
+LEARNING OUTCOMES:
+1 Learned how to design  responsive buttons with different purposes (Deposit/Withdraw).
+2 Learned how to create a centered responsive banking UI with HTML & CSS.
+3 Learned how to use flexbox for alignment and spacing.
+4 Learned how to style balance display with flex layout.
 
