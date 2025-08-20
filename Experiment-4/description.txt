@@ -65,6 +65,7 @@ Property:
  margin-top: 10px; → Keeps space between text-area and counter.
  font-size: 14px; → Smaller size than heading.
 
+
 JAVASCRIPT file 
 
 
