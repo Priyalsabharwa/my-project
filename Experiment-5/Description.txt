@@ -1,0 +1,57 @@
+Title
+Dynamic Product Filter with Dropdown using JavaScript DOM Manipulation
+
+Objective
+Create a web page that displays a list of products and allows the user to filter them dynamically using a dropdown menu. This task helps practice real-time event handling, DOM manipulation, and conditional rendering without reloading the page.
+
+Task Description
+FIELD: Dropdown (Filter Options) + Product List (Display Items)
+
+Requirement:
+1. Dropdown contains multiple filter options: "All", "Shoes", "Shirts", "Gadgets".
+2. Products must be grouped by category (defined using data-category attributes).
+3. When a user selects a category, only the matching products are displayed.
+4. Selecting "All" should display the full product list again.
+5. Filtering should happen instantly without page reload.
+
+Valid Inputs & Outputs
+1. Dropdown = All → All products (Shoes, Shirts, Gadgets) displayed.
+2. Dropdown = Shoes → Only products with data-category="shoes" are shown.
+       Example Output: Running Shoes, Casual Sneakers
+3. Dropdown = Shirts → Only Shirt products appear.
+4. Dropdown = Gadgets → Only Gadget products appear.
+
+Edge Behavior (Invalid/Boundary Cases)
+1. Empty Product List (future case) → No items should be shown.
+2. Dropdown Option not matching any product → Product list should display empty state (no items).
+3. Switching back to "All" → Instantly restores full list.
+
+CSS Styling Breakdown
+
+ELEMENT: body
+1. Background: #f9f9f9 (light gray for clean UI).
+2. Padding for spacing and readability.
+
+ELEMENT: select (Dropdown)
+1. Centered horizontally.
+2. Padding and font-size for usability.
+
+ELEMENT: .product-list (Container)
+1. flex-direction: column → Vertical stacking.
+2. gap: 12px → Spacing between items.
+3. align-items: center → Centered alignment.
+
+ELEMENT: .product (Individual Item)
+1. White card with shadow → clean card-like appearance.
+2. Padding + rounded corners for neat look.
+3. Hover effect with transform: scale(1.05) → smooth interaction.
+
+ELEMENT: .hidden (Utility Class)
+display: none; hides non-matching items during filtering.
+
+Learning Outcomes
+1. JavaScript DOM Selection – Using document.querySelectorAll and getElementById.
+2. Event Handling – Listening to change event on dropdown.
+3. Conditional Rendering – Showing/Hiding items dynamically based on category.
+4. CSS Flexbox – Managing product layout vertically.
+5. Reusable Code – Can easily extend to more categories or search functionality.

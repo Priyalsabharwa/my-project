@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Product Filter with Dropdown</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    select {
+      padding: 8px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .product-list {
+      display: flex;
+      flex-direction: column; /* 👈 vertical arrangement */
+      gap: 12px;
+      align-items: center;
+    }
+    .product {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 250px;   /* wider since vertical */
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .product:hover {
+      transform: scale(1.05);
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>Dynamic Product Filter</h2>
+  <!-- Dropdown filter -->
+  <select id="categoryFilter">
+    <option value="all">All</option>
+    <option value="shoes">Shoes</option>
+    <option value="shirts">Shirts</option>
+    <option value="gadgets">Gadgets</option>
+  </select>
+  <!-- Product list -->
+  <div class="product-list" id="productList">
+    <div class="product" data-category="shoes">Running Shoes</div>
+    <div class="product" data-category="shoes">Casual Sneakers</div>
+    <div class="product" data-category="shirts">Formal Shirt</div>
+    <div class="product" data-category="shirts">Casual T-Shirt</div>
+    <div class="product" data-category="gadgets">Smartphone</div>
+    <div class="product" data-category="gadgets">Smartwatch</div>
+  </div>
+  <script>
+    const filterDropdown = document.getElementById("categoryFilter");
+    const products = document.querySelectorAll(".product");
+    filterDropdown.addEventListener("change", function() {
+      const selected = this.value;
+      products.forEach(product => {
+        if (selected === "all" || product.dataset.category === selected) {
+          product.classList.remove("hidden");
+        } else {
+          product.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
