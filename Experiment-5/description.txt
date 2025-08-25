@@ -66,11 +66,33 @@ Properties and effects:
 
 Purpose: Handles category filtering dynamically.
 
+1.Product Array (product):
+A list of objects where each object represents a product with two properties:
+name: Product name (e.g., "Laptop").
+Category: The category it belongs to (e.g., "Electronics").
+
+2.Get HTML Elements:
+categorySelect: The <select> dropdown for category filtering.
+productList: The container (<div>) where filtered products will be displayed.
+
+3.updateProductList() Function:
+Reads the selected category from the dropdown.
+Filters the products array: If "all" is selected, show every product.
+                           Otherwise, show only products matching the chosen category.
+Clears the current product list (productList.innerHTML = '').
+Adds the filtered products back as <div class="product-item">Product Name</div> elements.
+
+4.Event Listener:
+categorySelect.addEventListener('change', updateProductList);
+Whenever the user changes the category in the dropdown, the product list updates automatically.
+
+5.Initial Call:
+updateProductList();
+Ensures all products are shown when the page first loads.
+
 
 LEARNING OUTCOMES:
-Learned to create a dynamic product filter using HTML, CSS, and JavaScript.
-Implemented DOM manipulation for real-time updates without page reload.
-Practiced category-based filtering logic.
-Designed a user-friendly interface with min
-
-imal CSS styling.
+1.Learned to create a dynamic product filter using HTML, CSS, and JavaScript.
+2.Implemented DOM manipulation for real-time updates without page reload.
+3.Practiced category-based filtering logic.
+4.Designed a user-friendly interface with minimal CSS styling.
