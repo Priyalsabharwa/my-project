@@ -14,6 +14,7 @@ const products = [
 const categorySelect = document.getElementById("category");
 const productList = document.getElementById("product-list");
 
+
 function updateProductList() {
     const selectedCategory = categorySelect.value;
 

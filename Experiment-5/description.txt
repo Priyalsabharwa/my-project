@@ -71,4 +71,6 @@ LEARNING OUTCOMES:
 Learned to create a dynamic product filter using HTML, CSS, and JavaScript.
 Implemented DOM manipulation for real-time updates without page reload.
 Practiced category-based filtering logic.
-Designed a user-friendly interface with minimal CSS styling.
+Designed a user-friendly interface with min
+
+imal CSS styling.
