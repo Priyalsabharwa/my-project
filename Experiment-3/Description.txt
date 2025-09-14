@@ -1,0 +1,121 @@
+ADMIN DASHBOARD: Test cases, validations and styling descriptions
+
+1. FIELD: Dark mode toggle
+   Purpose: Allows the user to switch between Light mode and Dark mode.
+    while clicking on the dark mode on the webpage it turns into dark mode (because for 
+    ="switch" is linked to the input)
+     here CSS language is used to change the page colors.
+
+   VALID INPUTS:
+       checked(checkbox is selected)
+       unchecked(checkbox isn't selected) 
+
+INVALID INPUTS:
+   A non-Boolean state( text or any number-1,8,7 cannot be come ), it only accepts checked /unchecked.
+
+2. FIELD: Header
+    Requirement: Display title and also add the colors of our choice (light/dark).
+   
+VALID INPUTS:
+   Its background, text color and spans across two grids in the layout(from CSS variables)
+ 
+INVALID INPUTS: None.
+
+3. FIELD: Navigation bar
+    Requirement: Provides easy navigation links to the dashboard section home, user, settings
+
+VALID INPUTS:
+    Link should be visible , clickable
+    Should change the background color(light-dark mode)
+    When adding the navigation links then use (<a href="home">Home</a>) this is an example
+    
+INVALID INPUTS:
+   Please avoid the broken links.
+
+4. FIELD: Main content area
+    Requirement: Display the main dashboard content, I have used "Welcome Priyal"
+      and "This is the main content area. Add charts, tables, or reports here."
+
+VALID INPUTS:
+ Text is visible and readable in both light and dark mode as well
+
+INVALID INPUTS: None.
+
+5. FIELD: Footer section
+    Requirement: here display the footer text by using copyright symbol
+
+VALID INPUTS:
+    Color change according to the theme .
+    Always spans across two grid columns.
+ 
+INVALID INPUTS: 
+   None , as it is used static content.
+ 
+
+6. FORM SUBMISSION:
+   This dashboard is static and has no forms submissions.
+   All the interactions are limited with theme switching and navigation bar.
+
+CSS Styling Breakdown: A Structured Overview
+
+1. Global Theme Variables (:root)
+  Purpose: It defines the reusability of colors for header, nav, footer, and main and text 
+  colors.
+ Property and effects:--bg-color-header: rgb(5, 130, 51);green color for header background.
+ --bg-color-nav: rgb(220, 223, 222);light grey  for navigation background.
+  --bg-color-footer: rgb(5, 130, 51); same green as header for footer background.
+  --text-color-header: rgb(47, 147, 52); green text for header.
+  --text-color-footer: white;  white text for footer.
+          
+2.Dark Mode Theme Variables
+Purpose:
+switching color scheme to dark mode when the checkbox is checked.
+
+Properties and effects: --bg-color-header: #222; Dark gray header background.
+  --bg-color-nav: #333;  Darker gray navigation background
+  --bg-color-footer: #222; Dark gray footer background.
+  --text-color-header: #fff;  White header text.
+  --text-color-footer: #ccc; Light gray footer text.
+
+3. Header
+Purpose: display the text and their colors.
+Properties and effects:
+ background-color: var(--bg-color-header); Matches theme.
+  color: var(--text-color-header); Matches theme.
+  border: 1px solid black; Visible border 
+  grid-column: 1 / span 2; spans both columns in grid layout.
+
+
+4. Navigation
+Purpose: Provides the navigation section for quick access to webpage.
+Properties and effects:
+background-color: var(--bg-color-nav); ight or dark depending on mode.
+  border: 1px solid black; adds definition.
+
+5. Main Content
+Purpose: here display the main content of the webpage (dashboard)
+Properties and effects:
+border: 1px solid black; clearly separates content area.
+
+6.Footer
+Purpose: Display footer section .
+Properties and effects:
+  background-color: var(--bg-color-footer);Matches header theme.
+  color: var(--text-color-footer); Matches text theme.
+  border: 1px solid black; Adds separations.
+  grid-column: 1 / span 2; Spans both columns.
+
+
+7. Dashboard Grid Layout
+Purpose: here organize header, navigation, main content, footer into the grid layout.
+Properties and effects:
+ display: grid; enables CSS grid layout.
+  grid-template-columns: auto auto ; two equal width columns.
+  grid-template-rows: 150px auto 60px; fixed height for header and footer
+  height: 100vh; full screen height.
+
+LEARNING OUTCOMES:
+1 Learn how to switch from light mode to dark mode.
+2 Learned how to apply semantic tags(header,footer, main, nav) for better structure.
+3 Learned how to use Grid layout for this experiment.
+4 Learned how to use CSS variables to manage theme effeciently.

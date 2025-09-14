@@ -1,0 +1,13 @@
+In this experiment we have just simply made a interface of registration form , where we add the 
+validations and also run that validations . First one is that our page is working propely or not 
+then other one like what constraints we have input in our index.html file name,e-mail, age
+and some of the validations and also seeing that these validation are able to work in our form 
+or not(by checking the validationsthet we have added into thses constraints are minlenght 
+,maxlenght,required, min ) . In style.css file  we have designed the background theme for 
+the form or how it look like in that we also add some constraints like  background colour,
+ width,height, padding,marginal,display, flex-direction. In the body of the form we have
+add the background colour,flex-direction,justify_content, align_content and also we have
+ check the default flex-direction of our form look - like (row and column) then its also 
+ changing the interace according to our prefernce but by default it is in the row formation
+.So now are form is in the working conditions after aproving all the conditions or we can 
+say all the validation approval has been done .
