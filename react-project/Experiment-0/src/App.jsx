@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import ProductCard from './components/ProductCard';
+import Header from '../Experiment-7/src/components/Header';
+import Footer from '../Experiment-7/src/components/Footer';
+import ProductCard from '../Experiment-7/src/components/ProductCard';
 
 function App() {
   const products = [
