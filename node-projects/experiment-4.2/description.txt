@@ -1,0 +1,77 @@
+
+CARD MANAGEMENT REST API – server.js
+1. Purpose
+A Node.js application using Express.js to manage a collection of playing cards.
+Allows users to view, add, and delete cards through a REST API.
+All data is stored in memory; no database required.
+Provides a simple backend for learning API development.
+
+2. Functionalities
+GET /cards → List all cards.
+GET /cards/:id → Fetch a card by its ID.
+POST /cards → Add a new card (requires suit and value).
+DELETE /cards/:id → Remove a card by its ID.
+
+3. Functions / Routes:
+(A) GET :
+Purpose: Returns all cards in the collection.
+
+Valid Input:
+No input required
+Example:
+" CURL -X GET http://localhost:3000/cards"
+
+Invalid Input:
+None (always returns current card array).
+
+(B) GET /cards/:id :
+Purpose: Returns a card with the specified ID.
+Valid Input Example:
+" CURL-X GET http://localhost:3000/cards/2"
+
+Invalid Input Example:
+"  GET http://localhost:3000/cards/10"
+Response:
+
+"{ "message": "Card not found" }"
+
+(C) POST /cards:
+Purpose: Adds a new card to the collection.
+Valid Input Example:
+
+"CURL-X POST http://localhost:3000/cards"
+
+Invalid Input Examples:
+Missing suit:
+{ "value": "Ten" }
+Missing value:
+{ "suit": "Hearts"} 
+
+(D) DELETE /cards/:id
+Purpose: Removes a card by ID.
+Valid Input Example:
+
+"DELETE http://localhost:3000/cards/3 "
+
+Invalid Input Example:
+"DELETE http://localhost:3000/cards/10"
+
+NOTE: here i have installed the rest client extension for generating GUI or the friendly interface where i made the file named as "cards_appi.http " in this  i add the send request that i want on my interface as according to the expected value.
+
+4. Application Flow:
+
+1 Server starts → listens on PORT 3000.
+2 Users interact via browser, Postman, or cURL.
+3 API updates the in-memory cards array based on requests.
+4 Users can add, list, or delete cards.
+5 Server keeps running until manually stopped.
+
+5. Learning Outcomes
+
+1 Built a REST API with Node.js and Express.js.
+2 Learned route handling: GET, POST, DELETE.
+3 Practiced in-memory data storage.
+4 Handled request validation and error responses.
+5 Understood HTTP status codes: 200, 201, 400, 404.
+6 Learned to run a backend server locally.
+7 Prepared documentation with examples for GitHub or teaching purposes.

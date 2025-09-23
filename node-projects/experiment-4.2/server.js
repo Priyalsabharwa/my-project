@@ -1,25 +1,25 @@
-// Filename: server.js
+
 
 const express = require("express");
 const app = express();
 const PORT = 3000;
 
-// Middleware to parse JSON request body
+
 app.use(express.json());
 
-// In-memory card collection
 let cards = [
   { id: 1, suit: "Hearts", value: "Ace" },
   { id: 2, suit: "Spades", value: "King" },
   { id: 3, suit: "Diamonds", value: "Queen" },
 ];
 
-// GET all cards
+
 app.get("/cards", (req, res) => {
   res.status(200).json(cards);
 });
 
-// GET card by ID
+
+
 app.get("/cards/:id", (req, res) => {
   const card = cards.find((c) => c.id === parseInt(req.params.id));
   if (!card) {
@@ -28,7 +28,6 @@ app.get("/cards/:id", (req, res) => {
   res.status(200).json(card);
 });
 
-// POST - Add new card
 app.post("/cards", (req, res) => {
   const { suit, value } = req.body;
   if (!suit || !value) {
@@ -45,7 +44,7 @@ app.post("/cards", (req, res) => {
   res.status(201).json(newCard);
 });
 
-// DELETE card by ID
+
 app.delete("/cards/:id", (req, res) => {
   const cardIndex = cards.findIndex((c) => c.id === parseInt(req.params.id));
   if (cardIndex === -1) {
@@ -59,7 +58,7 @@ app.delete("/cards/:id", (req, res) => {
   });
 });
 
-// Start server
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
