@@ -1,0 +1,96 @@
+SEAT BOOKING REST API – trainbooking.js
+
+1. Purpose:
+A Node.js application using Express.js to manage seat bookings.
+Allows users to view, lock, and confirm seats via Postman or any HTTP client.
+All data is stored in-memory.
+Good for learning API development, seat locking logic, and error handling.
+
+2. Functionalities:
+GET /seats → List all seats and their current status.
+POST /lock/:seatId → Lock a seat temporarily (1 minute).
+POST /confirm/:seatId → Confirm a locked seat (mark it as booked).
+
+3. Functions / Routes (Postman examples)
+(A) GET /seats:
+Purpose: Returns all seats in the system with their status (available, locked, booked).
+
+Valid Input: None
+Postman Request:
+Method: GET
+URL: http://localhost:3000/seats
+ Example:
+
+{
+  "1": { "status": "available", "lockExpiry": null },
+  "2": { "status": "booked", "lockExpiry": null }
+}
+
+Invalid Input: None (always returns the current seat array)
+
+(B) POST /lock/:seatId
+Purpose: Temporarily locks a seat for 1 minute.
+Valid Input Example:
+Lock an available seat:
+POST http://localhost:3000/lock/5
+example :
+
+{ "message": "Seat 5 locked successfully. Confirm within 1 minute." }
+
+Invalid Input / Error Cases:
+
+1.	Locking a seat that is already locked or booked:
+
+POST http://localhost:3000/lock/5
+example:
+
+{ "message": "Seat is already locked or booked." }
+
+2) Locking a seat ID that does not exist:
+
+POST http://localhost:3000/lock/10
+example:
+
+{ "message": "Seat not found." }
+
+(C) POST /confirm/:seatId
+Purpose: Confirms a previously locked seat (books it).
+Valid Input Example:
+Confirm a locked seat:
+POST http://localhost:3000/confirm/5
+Valid Response:
+
+{ "message": "Seat 5 booked successfully!" }
+
+
+Invalid Input / Error Cases:
+
+1.	Confirming a seat that is not locked or whose lock has expired:
+POST http://localhost:3000/confirm/3
+Response:
+{ "message": "Seat is not locked and cannot be booked" }
+
+
+2 Confirming a seat ID that does not exist:
+POST http://localhost:3000/confirm/10
+
+example:
+{ "message": "Seat not found." }
+
+4. Application Flow
+Start server → listens on PORT 3000.
+Interact via Postman (or curl/browser).
+API updates in-memory seat objects based on requests.
+Users can lock, confirm, or view seats.
+Locked seats are automatically released after 1 minute if not confirmed.
+Server keeps running until manually stopped.
+
+5. Learning Outcomes:
+
+1.	Built a REST API with Node.js and Express.js.
+2. Learned route handling: GET, POST.
+3 Practiced in-memory data storage.
+4 Handled request validation and error responses.
+5 Understood HTTP status codes: 200, 400, 404, 409.
+6Learned to run a backend server locally.
+7 Prepared Postman requests and examples for documentation.
