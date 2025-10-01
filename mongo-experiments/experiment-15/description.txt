@@ -1,0 +1,76 @@
+E-Commerce Catalog REST API – server.js
+1️⃣ Purpose
+This Node.js application uses Express.js and Mongoose to manage an e-commerce product catalog. It demonstrates:
+MongoDB integration via Mongoose
+Defining schemas and nested documents
+Seeding initial data
+Retrieving products
+Exposing REST API endpoints for testing via Postman or any HTTP client
+All product data is stored in MongoDB (ecommerceDB database) and allows flexible nested structures for variants.
+
+2️⃣ Functionalities
+
+MongoDB Connection
+
+Connects to the local database: mongodb://localhost:27017/ecommerceDB.
+
+Logs “MongoDB Connected” if successful.
+
+Schemas
+
+variantSchema → Represents each product variant (color, size, stock).
+
+productSchema → Represents the product with a nested array of variants.
+
+Model
+
+Product → Mongoose model for interacting with the products collection.
+
+Routes
+
+POST /api/products/seed → Seeds the database with sample products.
+
+Clears old data (deleteMany()) and inserts a predefined set of products.
+
+Returns inserted products as JSON.
+
+GET /api/products → Fetches all products from the database.
+
+Returns products with all nested variant details in JSON format.
+
+Server
+
+Runs on port 3000.
+
+Logs URL for easy testing.
+
+3️⃣ Sample Postman Usage
+Seed Products
+
+Method: POST
+
+URL: http://localhost:3000/api/products/seed
+
+Body: Empty
+
+Get All Products
+
+Method: GET
+
+URL: http://localhost:3000/api/products
+
+LEARNING OUTCOMES
+1MongoDB Integration
+a) earned how to connect Node.js applications to a MongoDB database using Mongoose.
+b)Understood the difference between local and remote MongoDB connections.
+
+2 Schema Design
+
+a) Designed Mongoose schemas for products and nested variants.
+b)Learned how to model one-to-many relationships using nested documents.
+
+3 CRUD Operations
+a)Implemented Create operation via /api/products/seed.
+b)Implemented Read operation via /api/products.
+
+4 REST API Development
