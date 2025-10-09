@@ -1,0 +1,48 @@
+Project: Middleware Implementation for Logging and Bearer Token Authentication
+1) Technologies Used:
+Node.js & Express.js: Backend server setup and request handling using middleware functions.
+JavaScript (ES6+): Implements middleware logic, route handling, and asynchronous flows.
+Postman / curl: Testing API endpoints for both public and protected routes.
+
+2) Project Overview
+This project demonstrates how middleware functions operate in an Express.js server by implementing two core middlewares:
+Logging Middleware:
+Globally logs each incoming HTTP request with its method, URL, and timestamp for monitoring and debugging purposes.
+Bearer Token Authentication Middleware:
+Protects specific routes by validating a Bearer token (mysecrettoken) in the Authorization header. Only clients providing the correct token can access protected resources.
+
+Additionally, the project provides:
+A public route accessible without authentication.
+A protected route that requires valid authorization.
+An admin router with sub-route middleware to demonstrate modular middleware usage.
+
+3) Project Structure
+Application Loop & In-Memory Data
+Requests are processed sequentially using Express middleware chaining:
+Global Logging Middleware – applies to all incoming requests.
+Custom Authentication Middleware – applied to protected routes or routers.
+Public & Protected Endpoints – test middleware flow and route protection.
+
+MIDDLEWARE IMPLEMENTATION:
+
+
+ 1) Endpoint: GET /
+Behavior: Accessible by anyone, no authentication needed
+
+2) GET /protected
+Behavior: Requires valid token in Authorization header.
+
+3)Admin Route
+Endpoint: GET /admin/dashboard
+Behavior: Protected, uses both authMiddleware and admin router middleware.
+
+4) Users CRUD Routes (in-memory users array)
+Endpoints: /users (POST, GET, PUT, DELETE)
+Behavior: No token protection currently
+
+Learning Outcomes
+
+1)Understanding sequential request processing in Express middleware using next().
+2)Learning to protect routes using Bearer token authentication.
+3)Applying global and route-level middleware for modular backend design.
+4)Testing APIs in Postman with and without authentication headers.

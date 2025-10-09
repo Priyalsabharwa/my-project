@@ -1,0 +1,59 @@
+Project Title: Bank Account Transfer System with Balance Validation
+1) Technologies Used:
+
+Node.js & Express.js: Backend server to handle HTTP requests and route logic.
+
+MongoDB & Mongoose: Database for storing user accounts and balances.
+
+JavaScript (ES6+): Implementation of route handling, middleware, and async logic.
+
+Postman / curl: API testing for creating users and performing transfers.
+
+2) Project Overview:
+
+This project simulates a simple banking system that allows transferring money between users while ensuring data consistency without using database transactions.
+
+Users can be created with initial balances.
+
+Money transfers validate that the sender has enough balance before performing the update.
+
+Appropriate error messages are returned when:
+
+Sender or receiver account does not exist
+
+Sender has insufficient balance
+
+Transfer amount is invalid
+
+Sender tries to transfer money to themselves
+
+The project also demonstrates how to interact with MongoDB through Mongoose and implement RESTful APIs using Express.js.
+
+3) Project Features / Routes:
+a) Create Initial Users
+
+Route: POST /create-users
+
+Function: Clears existing users and creates default accounts (Alice and Bob).
+
+Transfer Money Between Users
+
+Route: POST /transfer
+
+Invalid Cases:
+
+Insufficient funds → {"message": "Insufficient balance."}
+
+Invalid sender or receiver → {"message": "Sender account not found."} / {"message": "Receiver account not found."}
+
+Invalid amount or self-transfer → {"message": "Invalid sender, receiver, or amount."} / {"message": "Cannot transfer money to the same account."}
+
+Learning Outcomes:
+
+Learned to interact with MongoDB using Mongoose for CRUD operations.
+
+Practiced route-level validations and error handling in Express.js.
+
+Understood how to maintain logical consistency in dependent updates without transactions.
+
+Gained experience testing REST APIs with both valid and invalid inputs.
