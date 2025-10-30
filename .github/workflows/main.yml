@@ -11,6 +11,7 @@ on:
       - main
     paths:
       - 'React-Projects/Experiment-3.1/**'
+  workflow_dispatch:
 
 jobs:
   build:
