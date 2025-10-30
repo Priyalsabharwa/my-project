@@ -15,14 +15,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
     defaults:
       run:
         working-directory: React-Projects/Experiment-3.1
 
-      permissions:
-        contents: read
-        packages: write
-        
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
